@@ -1,0 +1,806 @@
+
+https://us02web.zoom.us/j/8941609518?pwd=cvYFvubswTsk9iuDmo8GfnFTegx58c.1
+
+
+https://us02web.zoom.us/j/8941609518?pwd=cvYFvubswTsk9iuDmo8GfnFTegx58c.1
+{
+"AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "My first cloud formation template",
+    "Metadata": {
+
+    },
+    "Parameters": {
+    
+    },
+    "Mappings": {
+
+    },
+    "Conditions": {
+
+    },
+    "Resources": {
+    "bwvpc": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/24",
+        "Tags": [
+    
+        { "Key": "Name", "bwvpc":  "--" }
+        ]
+      }
+    }
+    
+
+    },
+    "Outputs": {
+
+    }
+}
+
+
+
+
+
+VIDEOS LINKS AND PASSWORDS.
+               wHAT IS CLOUD COMPUTING
+			   https://us02web.zoom.us/rec/share/g1eDvCxTIkPdXxMZtKYsuJN5NcWd1t_y6cM_Glm3Jmse9yxD3ovuQ27qwks00Wes.aTq37-Z8jI-DY15s
+Passcode: 5kA1@860
+
+                 AWS IAM
+			 Link:  https://us02web.zoom.us/rec/share/ewIR5TyxbFOy8uAw1k9J76jLIiZ-w9LsLuJVW4dvzhiYiFMisXH9EAlcdXhh7EpG.jktpXYOTFKRFD7uo
+Passcode: Ab%gw5TW
+
+               IAM POLICY
+https://us02web.zoom.us/rec/share/vq_fC6VLBtD6GgutidS0MRfmkTf2jazfdajahG2zZ2PMs15NhjqygjS0dVA-9bI.2QrVCvfKev29KMRK
+Passcode: @R$$v*f0
+https://1drv.ms/p/s!AgJXAM29fULrgT_tCWc7o_5nktFq
+
+IAM ROLE AND MORE
+
+https://us02web.zoom.us/rec/share/X3FpRERKcuYa_3-5AGU0Alqd51AP3x_ijk5BNU5ixxrYIrB2ioxK7XQsC-BtWsom.uSAIsyGNYY0vRTJU
+Passcode: 1c40!xzf
+
+S3 (SIMPLY STORAGE SERVICE)
+https://us02web.zoom.us/rec/share/Voof39KOpYWW_oIyIy5J-w-0GP02D82LPXGs4A0LEqNzrBqooBJPHCDsKOwhDatn.Xrr_vj9N-bLq0qOw
+Passcode: tzx=Qi3J
+
+{
+"AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "My first cloud formation template",
+    "Metadata": {
+
+    },
+    "Parameters": {
+    
+    },
+    "Mappings": {
+
+    },
+    "Conditions": {
+
+    },
+    "Resources": {
+    "bwvpc": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/24",
+        "Tags": [
+    
+        { "Key": "Name", "bwvpc":  "--" }
+        ]
+      }
+    }
+    
+
+    },
+    "Outputs": {
+
+    }
+}
+
+
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "my first cloudformation template",
+  "Metadata": {},
+  "Parameters": {
+      "vpcCidr":{
+          "Description": "cidr block for my vpc",
+          "Type": "String",
+          "Default": ""
+      }
+  },
+  "Mappings": {},
+  "Conditions": {},
+  "Resources": {
+      "bwvpc": {
+          "Type": "AWS::EC2::VPC",
+          "Properties": {
+              "CidrBlock": {
+                  "Ref": "vpcCidr"
+              },
+              "Tags": [
+                  {
+                      "Key": "Name",
+                      "Value": "bwvpc"
+                  }
+              ]
+          }
+      },
+      "publicSubnet": {
+        "Type": "AWS::EC2::Subnet",
+        "Properties": {
+          "AvailabilityZone": "us-east-1a",
+          "VpcId":
+          { "Ref": "bwvpc" }
+          ,
+          "CidrBlock": "10.0.0.0/26",
+          "Tags": [
+          { "Key": "Name", "Value": "publicSubnet" }
+          ]
+        }
+      }
+  },
+  "Outputs": {}
+}
+
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "my first cloudformation template",
+	"Metadata": {},
+	"Parameters": {
+		"vpcCidr": {
+			"Description": "cidr block for my vpc",
+			"Type": "String",
+			"Default": ""
+		}
+
+
+	},
+	"Mappings": {},
+	"Conditions": {},
+	"Resources": {
+		"bwvpc": {
+			"Type": "AWS::EC2::VPC",
+			"Properties": {
+				"CidrBlock": {
+					"Ref": "vpcCidr"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": "bwvpc"
+				}]
+			}
+		},
+
+
+		"publicsubnet": {
+			"Type": "AWS::EC2::Subnet",
+			"Properties": {
+				"AvailabilityZone": "us-east-1a",
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"CidrBlock": "10.0.1.0/28",
+				"Tags": [{
+					"Key": "Name",
+					"Value": "pubsubnet"
+				}]
+			}
+		},
+
+
+		"priSubnet": {
+			"Type": "AWS::EC2::Subnet",
+			"Properties": {
+				"AvailabilityZone": "us-east-1b",
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"CidrBlock": "10.0.0.0/28",
+				"Tags": [{
+					"Key": "Name",
+					"Value": "priSubnet"
+				}]
+			}
+		},
+
+
+
+		"vpcIgw": {
+			"Type": "AWS::EC2::InternetGateway",
+			"Properties": {
+				"Tags": [{
+					"Key": "Name",
+					"Value": "myIgw"
+				}]
+			}
+		},
+		"AttachIgw": {
+			"Type": "AWS::EC2::VPCGatewayAttachment",
+			"Properties": {
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"InternetGatewayId": {
+					"Ref": "vpcIgw"
+				}
+			}
+		},
+
+
+		"IgwRT": {
+			"Type": "AWS::EC2::RouteTable",
+			"Properties": {
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": "pubRT"
+				}]
+			}
+		},
+
+
+		"pubRoute": {
+			"Type": "AWS::EC2::Route",
+			"Properties": {
+				"RouteTableId": {
+					"Ref": "IgwRT"
+				},
+
+				"DestinationCidrBlock": "0.0.0.0/0",
+				"GatewayId": {
+					"Ref": "vpcIgw"
+				}
+
+			}
+		},
+
+
+		"pubSubRtAss": {
+			"Type": "AWS::EC2::SubnetRouteTableAssociation",
+			"Properties": {
+				"SubnetId": {
+					"Ref": "publicsubnet"
+				},
+				"RouteTableId": {
+					"Ref": "IgwRT"
+				}
+
+			}
+		},
+
+		"myNgw": {
+			"Type": "AWS::EC2::NatGateway",
+			"Properties": {
+				"AllocationId": {
+					"Fn::GetAtt": ["NATGatewayEIP", "AllocationId"]
+				},
+				"SubnetId": {
+					"Ref": "publicsubnet"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": "myNgw"
+				}]
+			}
+		},
+		"NATGatewayEIP": {
+			"Type": "AWS::EC2::EIP",
+			"Properties": {
+				"Domain": "vpc"
+			}
+		},
+
+		"NgwRt": {
+			"Type": "AWS::EC2::RouteTable",
+			"Properties": {
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": "NgwRt"
+				}]
+			}
+		},
+
+		"NgwRoute": {
+			"DependsOn": ["myNgw"],
+			"Type": "AWS::EC2::Route",
+			"Properties": {
+				"RouteTableId": {
+					"Ref": "NgwRt"
+				},
+				"DestinationCidrBlock": "0.0.0.0/0",
+				"NatGatewayId": {
+					"Ref": "myNgw"
+				}
+			}
+		},
+
+		"priSubRtAss": {
+			"Type": "AWS::EC2::SubnetRouteTableAssociation",
+			"Properties": {
+				"SubnetId": {
+					"Ref": "priSubnet"
+				},
+				"RouteTableId": {
+					"Ref": "NgwRt"
+				}
+
+			}
+		}
+	},
+	"Outputs": {}
+},
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "my first cloudformation template",
+	"Metadata": {},
+	"Parameters": {
+		"vpcCidr": {
+			"Description": "cidr block for my vpc",
+			"Type": "String",
+			"Default": ""
+		}
+
+
+	},
+	"Mappings": {},
+	"Conditions": {},
+	"Resources": {
+		"bwvpc": {
+			"Type": "AWS::EC2::VPC",
+			"Properties": {
+				"CidrBlock": {
+					"Ref": "vpcCidr"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": "bwvpc"
+				}]
+			}
+		},
+
+
+		"publicsubnet": {
+			"Type": "AWS::EC2::Subnet",
+			"Properties": {
+				"AvailabilityZone": "us-east-1a",
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"CidrBlock": "10.0.1.0/28",
+				"Tags": [{
+					"Key": "Name",
+					"Value": "pubsubnet"
+				}]
+			}
+		},
+
+
+		"priSubnet": {
+			"Type": "AWS::EC2::Subnet",
+			"Properties": {
+				"AvailabilityZone": "us-east-1b",
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"CidrBlock": "10.0.0.0/28",
+				"Tags": [{
+					"Key": "Name",
+					"Value": "priSubnet"
+				}]
+			}
+		},
+
+
+
+		"vpcIgw": {
+			"Type": "AWS::EC2::InternetGateway",
+			"Properties": {
+				"Tags": [{
+					"Key": "Name",
+					"Value": "myIgw"
+				}]
+			}
+		},
+		"AttachIgw": {
+			"Type": "AWS::EC2::VPCGatewayAttachment",
+			"Properties": {
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"InternetGatewayId": {
+					"Ref": "vpcIgw"
+				}
+			}
+		},
+
+
+		"IgwRT": {
+			"Type": "AWS::EC2::RouteTable",
+			"Properties": {
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": "pubRT"
+				}]
+			}
+		},
+
+
+		"pubRoute": {
+			"Type": "AWS::EC2::Route",
+			"Properties": {
+				"RouteTableId": {
+					"Ref": "IgwRT"
+				},
+
+				"DestinationCidrBlock": "0.0.0.0/0",
+				"GatewayId": {
+					"Ref": "vpcIgw"
+				}
+
+			}
+		},
+
+
+		"pubSubRtAss": {
+			"Type": "AWS::EC2::SubnetRouteTableAssociation",
+			"Properties": {
+				"SubnetId": {
+					"Ref": "publicsubnet"
+				},
+				"RouteTableId": {
+					"Ref": "IgwRT"
+				}
+
+			}
+		},
+
+		"myNgw": {
+			"Type": "AWS::EC2::NatGateway",
+			"Properties": {
+				"AllocationId": {
+					"Fn::GetAtt": ["NATGatewayEIP", "AllocationId"]
+				},
+				"SubnetId": {
+					"Ref": "publicsubnet"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": "myNgw"
+				}]
+			}
+		},
+		"NATGatewayEIP": {
+			"Type": "AWS::EC2::EIP",
+			"Properties": {
+				"Domain": "vpc"
+			}
+		},
+
+		"NgwRt": {
+			"Type": "AWS::EC2::RouteTable",
+			"Properties": {
+				"VpcId": {
+					"Ref": "bwvpc"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": "NgwRt"
+				}]
+			}
+		},
+
+		"NgwRoute": {
+			"DependsOn": ["myNgw"],
+			"Type": "AWS::EC2::Route",
+			"Properties": {
+				"RouteTableId": {
+					"Ref": "NgwRt"
+				},
+				"DestinationCidrBlock": "0.0.0.0/0",
+				"NatGatewayId": {
+					"Ref": "myNgw"
+				}
+			}
+		},
+
+		"priSubRtAss": {
+			"Type": "AWS::EC2::SubnetRouteTableAssociation",
+			"Properties": {
+				"SubnetId": {
+					"Ref": "priSubnet"
+				},
+				"RouteTableId": {
+					"Ref": "NgwRt"
+				}
+
+			}
+		}
+	},
+	"Outputs": {}
+},
+https://github.com/awslabs/aws-cloudformation-templates/blob/master/community/services/VPC/vpc_template.json
+
+
+
+
+#!/bin/bash
+yum update -y
+yum install -y httpd.x86_64
+systemctl start httpd.service
+systemctl enable httpd.service
+echo "<h3>This response is from $(hostname -f). BlueWave Session on Thursday. Have a good evening!</h3>" > /var/www/html/index.html
+
+
+
+
+https://jasongwe.signin.aws.amazon.com/console
+
+
+
+    1. Setting up Ansible Friendly Environment and performing Ansible Static Inventory
+Spin up 4 servers with Amazon Linux 2 AMI, name them as follows: 
+ansible-master
+ansible-node1
+ansible-node2
+ansible-node2
+Connect into each of the server and change the hostname of your server
+#sudo hostname ansible-master
+#sudo hostname ansible-node1
+#sudo hostname ansible-node2
+#sudo hostname ansible-node3
+Create User ansible in all 4 servers
+#useradd: ansible
+#passwd: ansible
+edit the sshd_config file of all your 4 servers
+#sudo vi /etc/ssh/sshd_config  
+:/PasswordAuthentication  
+:/PermitRootLogin  
+Change PermitRootLogin no  to PermitRootLogin yes  
+Change PasswordAuthentication no to PasswordAuthentication yes  
+ 
+#sudo service sshd restart 
+Add user ansible to the wheel group
+#vi /etc/sudoers
+Add ansible to root, under root add ansible. This will allow ansible to work as root without requiring a password
+#ansible ALL=(ALL) NOPASSWD: ALL
+To begin exploring Ansible as a means of managing our various servers, we need to install the Ansible software on ansible master. What ever we are doing below is only in the ansible-master:
+Step 1 — Install the latest version of a packages
+$ sudo yum update -y
+Step 2 — Use the amazon-linux-extras command to install ansible.
+$ sudo amazon-linux-extras install ansible2 -y
+Step 3– Check Ansible Version
+$ ansible — version
+Ansible keeps track of all of the servers that it knows about through a "hosts" file. We need to set up this file first before we can begin to communicate with our other computers. 
+Open the file with root privileges like this: 
+#sudo vi /etc/ansible/hosts 
+vim etc/ansible/hosts 
+[webserver] 
+Ip address of ansible-node1
+Ip address of ansible-node2
+In your ansible-master, login as user ansible and generate ssh key on ansible control server
+#exit (to logout of linux user)
+#ssh ansible@ip address of the master server 
+Create an ssh key in master server and copy it to node servers
+This will create .ssh folder (/home/ansadm/.ssh). Hit enter all the way through
+#ssh-keygen -t rsa 
+This will create .ssh folder (/home/ansible/.ssh). Hit enter all the way through
+#chmod 700 /home/ansible/.ssh 
+#ssh-copy-id ansible@ip address of you ansible-node1
+#ssh-copy-id ansible@ip address of you ansible-node2
+#ssh-copy-id ansible@ip address of you ansible-node3
+#ssh ansible@ip address of you ansible-node1
+#ssh ansible@ip address of you ansible-node2
+#ssh ansible@ip address of you ansible-node3
+Now all three servers are configured, ansible control server can do ssh on both the servers 
+check connectivity of hosts is 
+#ansible  <group> -m ping  (Remember, you MUST replace <group> with your group name or enter "all" to ping all servers)
+BELOW ARE SOME COMMANDS WE COULD USE TO DO A VARIETY OF THINGS ON OUR ANSIBLE SERVERS.
+Check if package is installed & update it 
+• $ ansible <group> -m yum -a “name=ntp state=latest” 
+Check if package is installed & don’t update it 
+• $ ansible <group> -m yum -a “name=ntp state=present” 
+Check if package is at a specific version 
+• $ ansible -i <group>  -b -m yum -a “name= ntp-1.8 state=present” 
+• $ ansible -i <group>  -b -m yum -a “name= ntp-1.8 state=latest” 
+Now check the RAM Memory usage on all servers using the 'free -m' command. 
+• ansible hakase-testing -m shell -a 'free -m' --become 
+Check the disk available on the root partition using the fdisk command. 
+• ansible hakase-testing -m shell -a 'df -h /dev/sda2' --become 
+Install a single package using the ad-hoc command with the apt module as below. 
+• ansible hakase-testing -m yum -a 'name=nginx state=latest' --become 
+Now check the uptime of each server. 
+• ansible hakase-testing -m shell -a 'uptime' --become 
+Check if package is not installed 
+• $ ansible <group>  -b -m yum -a “name=ntp state=absent” 
+Starting a service 
+• $ ansible <group>  -b -m service -a “name=httpd state=started” 
+Stopping a service 
+• $ ansible <group>  -b -m service -a “name=httpd state=stopped” 
+Restarting a service 
+• $ ansible <group>  -b -m service -a “name=httpd state=restarted” 
+Working with file module 
+• $ ansible -i <group>  -b -m file -a “name=/root/test state=touch” 
+• $ ansible -i <group>  -b -m file -a “name=/root/test state=absent” 
+ Creating system user with user and modules 
+• $ ansible -i <group>  -b -m user-a “name=user1 state=present” 
+• $ ansible  -i <group>  -b -m user-a “name=jjtech state=absent” 
+• $ ansible -i <group>  -b -m group -a “name=group1” 
+• $ ansible  -i <group>  -b -m user -a “name=user1 group=group1” 
+Ansible Glossary 
+• The following Ansible-specific terms are largely used throughout this guide: 
+• Control Machine / Node: a system where Ansible is installed and configured to connect and execute commands on nodes. 
+• Node: a server controlled by Ansible. 
+• Inventory File: a file that contains information about the servers Ansible controls, typically located at /etc/ansible/hosts. 
+• Playbook: a file containing a series of tasks to be executed on a remote server. 
+• Role: a collection of playbooks and other files that are relevant to a goal such as installing a web server. 
+Play: a full Ansible run. Aplaycan have several playbooks and roles, included from a single playbook that acts as entry point. 
+Running Playbooks 
+To run a playbook and execute all the tasks defined within it, use the ansible-playbook command: 
+• #ansible-playbook myplaybook.yml 
+ 
+To overwrite the default hosts option in the playbook and limit execution to a certain group or host, include the option -l in your command: 
+• #ansible-playbook -l server1 myplaybook.yml 
+Getting Information about a Play 
+The option --list-tasks is used to list all tasks that would be executed by a play without making any changes to the remote servers: 
+ 
+• #ansible-playbook myplaybook.yml --list-tasks 
+ 
+Similarly, it is possible to list all hosts that would be affected by a play, without running any tasks on the remote servers: 
+• #ansible-playbook myplaybook.yml --list-hosts 
+ 
+You can use tags to limit the execution of a play. To list all tags available in a play, use the option --list-tags: 
+• #ansible-playbook myplaybook.yml --list-tags 
+ 
+• #ansible-playbook packages.yml 
+• #ansible --list-hosts all 
+    2. ANSIBLE DYNAMIC INVENTORY
+(Ubuntu as Master and Amazon Linux 2 as Nodes)
+Pre-requisites:
+• Create 1 Ubuntu 20.4 EC2 Instance with an IAM role and attach EC2 permissions.
+• Create 3 EC2 Amazon Linux – 2 Instances with 22 port allowing master EC2 IP in security group.
+SSH into Ansible-Master
+• Update the EC2 instance packages
+ 
+sudo apt update -y
+• Install Ansible - 
+sudo apt install -y ansible
+• Install Python
+ 
+sudo apt install python-is-python3
+• Install PIP
+ 
+sudo apt-get install python3-pip -y
+• Install Boto
+ 
+sudo pip3 install boto
+ 
+• Install Boto3
+ 
+sudo pip3 install boto3
+ 
+ 
+• Install Ansible Dynamic Inventory Plugin
+ 
+   ansible-galaxy collection install amazon.aws
+    
+○ Add a tag to three Ansible Node EC2 Instances
+    § Env : dev
+○ Create a file for Ansible Dynamic Inventory Plugin
+    § sudo vi aws_ec2.yaml
+    § Paste the following content (UNALTERED)
+    
+plugin: aws_ec2
+regions:
+  - us-west-2
+filters:
+  tag:Env:
+    - dev
+○ Go to /etc/ansible/ansible.cfg, here everything is commented so uncomment “sudo_user=root” and "host_key_checking=False"
+    ○ sudo vi /etc/ansible/ansible.cfg and uncomment
+○ To test dynamic Inventory
+ansible-inventory -i aws_ec2.yaml --list
+○ Create the pem key file which is used for Ansible Node EC2 Instances (PASS YOUR KEYPAIR NAME)
+sudo vi bluewave-key.pem
+LOCATE YOUR KEYPAIR IN YOUR PERSONAL COMPUTER, CAT IT , COPY THE CONTENT AND PASTE IN THE FILE CREATED.
+chmod 400 bluewave-key.pem
+ 
+○ Run below command to check ping for Ansible Nodes
+ansible aws_ec2 -i aws_ec2.yaml -m ping --private-key=bluewave-key.pem --user ec2-user
+○ Run below command to install git on Ansible nodes using dynamic inventory
+sudo ansible aws_ec2 -i aws_ec2.yaml -m yum -a 'name=git state=present' --private-key=bluewave-key.pem --become --user ec2-user
+○ Let’s run ansible playbook in the below demo
+○ Create a Ansible Playbook
+    ○  sudo vi test-playbook.yaml
+---
+- name: sample playbook
+  hosts: all
+  become: true
+  tasks:
+    - name: install httpd
+      yum:
+          name: httpd
+          state: latest
+    - name: run httpd
+      service:
+              name: httpd
+              state: started
+    - name: create content
+      copy:
+          content: "GM! Hello from Bluewave students!"
+          dest: /var/www/html/index.html
+To test ansible playbook run below command
+sudo ansible-playbook -i aws_ec2.yaml -l aws_ec2 test-playbook.yaml --private-key=bluewave-key.pem --user ec2-user
+To test whether playbook is executed successfully. Copy the public ip of one of your Ansible nodes and search on google or search bar..
+HAPPY LEARNING!
+BLUEWAVE 
+
+
+
+
+Pinned by Fon Muluh
+
+
+Boris Chi
+  7:57 AM
+#!/bin/bash
+sudo yum update –y
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum upgrade
+sudo amazon-linux-extras install java-openjdk11 -y
+sudo yum install jenkins -y
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+# Installing Git
+sudo yum install git -y
+###
+# Use The Amazon Linux 2 AMI When Launching The Jenkins VM/EC2 Instance
+# Instance Type: t2.medium or small minimum
+# Open Port (Security Group): 8080
+
+aws ssm get-parameter \
+    --name "MyStringParameter"
+	
+	
+sudo amazon-linux-extras install ansible2
+
+
+---
+- name: sample playbook
+  hosts: all
+  become: true
+  tasks:
+    - name: install httpd
+      yum:
+          name: httpd
+          state: latest
+    - name: run httpd
+      service:
+              name: httpd
+              state: started
+    - name: create content
+      copy:
+          content: "GM! Hello from JJTech"
+          dest: /var/www/html/index.html
+
+
+
+
+
+
+
+
+
+
+
+
